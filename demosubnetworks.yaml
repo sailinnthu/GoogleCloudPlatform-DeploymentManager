@@ -1,0 +1,19 @@
+resources:
+- type: compute.v1.subnetwork 
+  name: sgweb
+  properties: 
+   network: https://www.googleapis.com/compute/v1/projects/demoproject-156004/global/networks/singaporedc
+   region: asia-east1
+   ipCidrRange: 192.168.10.0/24
+- type: compute.v1.subnetwork 
+  name: sgapp
+  properties: 
+   network: https://www.googleapis.com/compute/v1/projects/demoproject-156004/global/networks/singaporedc
+   region: asia-east1
+   ipCidrRange: 192.168.20.0/24
+- type: compute.v1.subnetwork
+  name: sgdb
+  properties: 
+   network: https://www.googleapis.com/compute/v1/projects/demoproject-156004/global/networks/singaporedc
+   region: asia-east1
+   ipCidrRange: 192.168.30.0/24
