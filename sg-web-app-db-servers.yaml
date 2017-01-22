@@ -1,0 +1,56 @@
+resources:
+- name: sgwebsvr
+  type: compute.v1.instance
+  properties:
+    zone: asia-east1-a
+    machineType: https://www.googleapis.com/compute/v1/projects/demoproject-156004/zones/asia-east1-a/machineTypes/f1-micro
+    disks:
+    - deviceName: boot
+      type: PERSISTENT
+      boot: true
+      autoDelete: true
+      initializeParams:
+        sourceImage: https://www.googleapis.com/compute/v1/projects/ubuntu-os-cloud/global/images/ubuntu-1604-xenial-v20170113
+    networkInterfaces:
+    - network: https://www.googleapis.com/compute/v1/projects/demoproject-156004/global/networks/singaporedc
+      subnetwork: https://www.googleapis.com/compute/v1/projects/demoproject-156004/regions/asia-east1/subnetworks/sgweb
+      accessConfigs:
+      - name: External NAT
+        type: ONE_TO_ONE_NAT
+- name: sgappsvr
+  type: compute.v1.instance
+  properties:
+    zone: asia-east1-b
+    machineType: https://www.googleapis.com/compute/v1/projects/demoproject-156004/zones/asia-east1-a/machineTypes/f1-micro
+    disks:
+    - deviceName: boot
+      type: PERSISTENT
+      boot: true
+      autoDelete: true
+      initializeParams:
+        sourceImage: https://www.googleapis.com/compute/v1/projects/ubuntu-os-cloud/global/images/ubuntu-1604-xenial-v20170113
+    networkInterfaces:
+    - network: https://www.googleapis.com/compute/v1/projects/demoproject-156004/global/networks/singaporedc
+      subnetwork: https://www.googleapis.com/compute/v1/projects/demoproject-156004/regions/asia-east1/subnetworks/sgapp
+      accessConfigs:
+      - name: External NAT
+        type: ONE_TO_ONE_NAT
+- name: sgdbsvr
+  type: compute.v1.instance
+  properties:
+    zone: asia-east1-c
+    machineType: https://www.googleapis.com/compute/v1/projects/demoproject-156004/zones/asia-east1-a/machineTypes/f1-micro
+    disks:
+    - deviceName: boot
+      type: PERSISTENT
+      boot: true
+      autoDelete: true
+      initializeParams:
+        sourceImage: https://www.googleapis.com/compute/v1/projects/ubuntu-os-cloud/global/images/ubuntu-1604-xenial-v20170113
+    networkInterfaces:
+    - network: https://www.googleapis.com/compute/v1/projects/demoproject-156004/global/networks/singaporedc
+      subnetwork: https://www.googleapis.com/compute/v1/projects/demoproject-156004/regions/asia-east1/subnetworks/sgdb
+      accessConfigs:
+      - name: External NAT
+        type: ONE_TO_ONE_NAT
+        
