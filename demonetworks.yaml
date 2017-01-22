@@ -1,0 +1,13 @@
+resources:
+- type: compute.v1.network 
+  name: singaporedc 
+  properties: 
+   autoCreateSubnetworks: false
+- type: compute.v1.network 
+  name: japandc 
+  properties: 
+   autoCreateSubnetworks: false
+- type: compute.v1.network 
+  name: newyorkdc 
+  properties: 
+   autoCreateSubnetworks: false
