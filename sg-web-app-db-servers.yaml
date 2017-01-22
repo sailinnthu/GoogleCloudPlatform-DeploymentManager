@@ -21,7 +21,7 @@ resources:
   type: compute.v1.instance
   properties:
     zone: asia-east1-b
-    machineType: https://www.googleapis.com/compute/v1/projects/demoproject-156004/zones/asia-east1-a/machineTypes/f1-micro
+    machineType: https://www.googleapis.com/compute/v1/projects/demoproject-156004/zones/asia-east1-b/machineTypes/f1-micro
     disks:
     - deviceName: boot
       type: PERSISTENT
@@ -39,7 +39,7 @@ resources:
   type: compute.v1.instance
   properties:
     zone: asia-east1-c
-    machineType: https://www.googleapis.com/compute/v1/projects/demoproject-156004/zones/asia-east1-a/machineTypes/f1-micro
+    machineType: https://www.googleapis.com/compute/v1/projects/demoproject-156004/zones/asia-east1-c/machineTypes/f1-micro
     disks:
     - deviceName: boot
       type: PERSISTENT
