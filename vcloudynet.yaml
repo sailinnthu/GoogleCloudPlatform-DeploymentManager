@@ -1,0 +1,23 @@
+resources:
+- type: compute.v1.network 
+  name: singaporedc 
+  properties: 
+   autoCreateSubnetworks: false
+- type: compute.v1.subnetwork 
+  name: sgweb 
+  properties: 
+   network: $(ref.singaporedc.selfLink) 
+   region: asia-east1 
+   ipCidrRange: 192.168.10.0/24
+- type: compute.v1.subnetwork 
+  name: sgapp 
+  properties: 
+   network: $(ref.singaporedc.selfLink) 
+   region: asia-east1 
+   ipCidrRange: 192.168.20.0/24
+- type: compute.v1.subnetwork 
+  name: sgdb 
+  properties: 
+   network: $(ref.singaporedc.selfLink) 
+   region: asia-east1 
+   ipCidrRange: 192.168.30.0/24
